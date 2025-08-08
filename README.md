@@ -11,7 +11,7 @@
 ### 2.prev：指向前一個節點
 ### 3.next：指向下一個節點
 
-## 程式碼
+## 三、程式碼
 ### 宣告
 #include <stdio.h>
 #include <stdlib.h>
@@ -120,3 +120,7 @@ int main() {
 
     return 0;
 }
+
+## 四、測試結果
+
+![image](https://github.com/05ki19lj/Doubly-Linked-List/blob/main/T.png)
