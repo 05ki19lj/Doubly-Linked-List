@@ -1,5 +1,10 @@
 # Doubly-Linked-List
 
+### 1.data：存放資料
+
+### 2.prev：指向前一個節點
+
+### 3.next：指向下一個節點
 
 
 ## 宣告
