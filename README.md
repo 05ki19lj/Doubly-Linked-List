@@ -1,29 +1,29 @@
 # Doubly-Linked-List 雙向鏈表
 
-## 認識
+## 一、認識
 ### 鏈表（Linked List）是一種基於節點（Node）連接的線性資料結構。
 ### 雙向鏈表（Doubly Linked List）在每個節點中，同時保存指向前一個節點（prev）與下一個節點（next）的指標，因此能在 O(1) 的時間內向任意方向移動。
 ### 雙向鏈表相較單向鏈表，對於需要頻繁插入與刪除的情境更有效率，尤其適用於瀏覽器歷史記錄、LRU 快取、撤銷/重做等應用。
 
-## 結構
+## 二、結構
 
 ### 1.data：存放資料
 ### 2.prev：指向前一個節點
 ### 3.next：指向下一個節點
 
-
-## 宣告
+## 程式碼
+### 宣告
 #include <stdio.h>
 #include <stdlib.h>
 
-## 節點結構
+### 節點結構
 typedef struct Node {
     int data;
     struct Node* prev;
     struct Node* next;
 } Node;
 
-## 建立新節點
+### 建立新節點
 Node* createNode(int data) {
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
@@ -32,7 +32,7 @@ Node* createNode(int data) {
     return newNode;
 }
 
-## 在頭部插入
+### 在頭部插入
 void insertAtHead(Node** head, int data) {
     Node* newNode = createNode(data);
     if (*head != NULL) {
@@ -42,7 +42,7 @@ void insertAtHead(Node** head, int data) {
     *head = newNode;
 }
 
-## 在尾部插入
+### 在尾部插入
 void insertAtTail(Node** head, int data) {
     Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -57,7 +57,7 @@ void insertAtTail(Node** head, int data) {
     newNode->prev = temp;
 }
 
-## 刪除節點
+### 刪除節點
 void deleteNode(Node** head, int key) {
     Node* temp = *head;
     while (temp != NULL) {
@@ -75,7 +75,7 @@ void deleteNode(Node** head, int key) {
     }
 }
 
-## 正向遍歷
+### 正向遍歷
 void traverseForward(Node* head) {
     Node* temp = head;
     while (temp != NULL) {
@@ -85,7 +85,7 @@ void traverseForward(Node* head) {
     printf("NULL\n");
 }
 
-## 反向遍歷
+### 反向遍歷
 void traverseBackward(Node* head) {
     Node* temp = head;
     if (temp == NULL) return;
@@ -99,7 +99,7 @@ void traverseBackward(Node* head) {
     printf("NULL\n");
 }
 
-## 測試主程式
+### 測試主程式
 int main() {
     Node* head = NULL;
 
